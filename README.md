@@ -1,11 +1,12 @@
-# Example RDS Snapshot Limit Alert - Installation / Configuration
+# RDS Snapshot Limit Alert - Installation / Configuration
 
 The module 
 
-This module iterates through each teams' RDS manual snapshots and compares the snapshot count against the limit set. If the actual number
-of snapshot exceeds the limit a slack notification is sent to the Cloud Platform channel with details as follows:
+This module iterates through each teams' namespace to capture the limit set for the teams RDS manual snapshots and compares this against the actual number of manual RDS snapshots.
 
-* Actual snapshot count 
+If the actual number of manual snapshot exceeds the limit then a slack notification is sent to the Cloud Platform channel with details as follows:
+
+* Actual snapshot count vs Limit set
 * RDS Server name
 * Team name
 * Link navigating to the snapshot AWS console
