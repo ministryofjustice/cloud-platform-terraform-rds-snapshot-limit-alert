@@ -112,12 +112,10 @@ data "helm_repository" "rds_snapshot_limit" {
 resource "helm_release" "rds_snapshot_limit" {
 
   depends_on = [module.rds_user_cp.id]
-  name          = "rds-snapshot"
+  name          = "rds-snapshot-limit"
   namespace     = kubernetes_namespace.rds_snapshot_limit.id
-  #repository    = data.helm_repository.rds_snapshot_limit.metadata[0].name
-  #chart         = "rds-snapshot-limit"
-  chart         = "/Users/imranawan/projects/moj/snapshot/rds-snapshot/"
-  #version       = var.rds-snapshot-limit_chart_version
+  repository    = data.helm_repository.rds_snapshot_limit.metadata[0].name
+  chart         = "rds-snapshot-limit"
   version       = local.rds-snapshot-limit
 
 
