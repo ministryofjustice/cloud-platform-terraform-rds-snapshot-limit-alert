@@ -92,7 +92,6 @@ resource "kubernetes_cluster_role_binding" "rds_snapshot_secret_reader" {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
     name      = kubernetes_cluster_role.rds_snapshot_secret_reader.id
-    #kubernetes_cluster_role.rds_snapshot_secret_reader.id / cluster-admin
     
   }
   subject {
